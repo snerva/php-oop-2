@@ -12,49 +12,28 @@ Il cliente effettua il pagamento dei prodotti nel carrello con la carta di credi
 
 require_once __DIR__ . '/Models/Product.php';
 require_once __DIR__ . '/Models/Categories.php';
+require_once __DIR__ . '/Models/Food.php';
+require_once __DIR__ . '/Models/Toys.php';
+require_once __DIR__ . '/Models/PetHouse.php';
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Store</title>
+
+</head>
+
+<body>
 
 
 
-class Food extends Product
-{
-    public $taste;
-    public $weight;
-    public $ingredients;
-    public $type;
+</body>
 
-    public function __construct($taste, $weight, $ingredients, $type, $name, $code, $price, Category $category, $image)
-    {
-        $this->taste = $taste;
-        $this->weight = $weight;
-        $this->ingredients = $ingredients;
-        $this->type = $type;
-
-        parent::__construct($name, $code, $price, $category, $image);
-    }
-}
-
-class Toy extends Product
-{
-    public $size;
-
-    public function __construct($size,  $name, $code, $price, Category $category, $image)
-    {
-        $this->size = $size;
-
-        parent::__construct($name, $code, $price, $category, $image);
-    }
-}
-
-class PetHouse extends Product
-{
-    public $size;
-    public $material;
-
-    public function __construct($size, $material, $name, $code, $price, Category $category, $image)
-    {
-        $this->size = $size;
-        $this->material = $material;
-
-        parent::__construct($name, $code, $price, $category, $image);
-    }
-}
+</html>
