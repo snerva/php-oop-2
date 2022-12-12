@@ -58,20 +58,22 @@ $products = [
     <main>
         <div class="container">
             <div class="row row-cols-3">
-                <div class="col">
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">name</h5>
-                            <h6 class="card-title">price</h6>
-                            <div class="card-text">
-                                <p>product type </p>
-                                <span>category</span>
+                <?php foreach ($products as $product) : ?>
+                    <div class="col p-3">
+                        <div class="card">
+                            <img src="<?php echo $product->image ?>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $product->name ?></h5>
+                                <h6 class="card-title"><?php echo $product->price ?></h6>
+                                <div class="card-text">
+                                    <p></p>
+                                    <span><?php echo $product->category->getAnimalIcon() ?></span>
+                                </div>
+                                <a href="#" class="btn btn-primary">Add Cart</a>
                             </div>
-                            <a href="#" class="btn btn-primary">Add Cart</a>
                         </div>
                     </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
 
