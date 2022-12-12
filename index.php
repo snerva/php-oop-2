@@ -65,9 +65,9 @@ $products = [
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $product->name ?></h5>
                                 <h6 class="card-title"><?php echo $product->price ?></h6>
-                                <div class="card-text">
-                                    <p></p>
+                                <div class="card-text my-3">
                                     <span><?php echo $product->category->getAnimalIcon() ?></span>
+                                    <strong><?php echo get_class($product) ?></strong>
                                 </div>
                                 <a href="#" class="btn btn-primary">Add Cart</a>
                             </div>
