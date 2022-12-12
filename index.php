@@ -28,10 +28,36 @@ require_once __DIR__ . '/Database/db.php';
 
 <body>
     <header>
-
+        <div class="logo p-3">
+            <h1 class="text-warning fw-bold">PetStore</h1>
+        </div>
+        <div class="navbar navbar-expand-lg bg-warning">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Cat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active">Dog</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
-        <div class="container">
+        <div class="container p-3">
             <div class="row row-cols-3">
                 <?php foreach ($products as $product) : ?>
                     <div class="col p-3">
@@ -44,7 +70,7 @@ require_once __DIR__ . '/Database/db.php';
                                     <span><?php echo $product->category->getAnimalIcon() ?></span>
                                     <strong><?php echo get_class($product) ?></strong>
                                 </div>
-                                <a href="#" class="btn btn-primary">Add Cart</a>
+                                <a href="#" class="btn btn-warning">Add Cart</a>
                             </div>
                         </div>
                     </div>
