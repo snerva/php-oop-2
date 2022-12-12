@@ -30,5 +30,10 @@ $products = [
 
     new Toy(' L 15 x P 15 x H 23 cm', 'Base con giochi Wild Mouse con sonoro e LED', '5.99 €', new Category('cat'), 'https://shop-cdn-m.mediazs.com/bilder/base/con/giochi/wild/mouse/con/sonoro/e/led/6/800/67335_pla_sincerepet_katzenspielbrett_wild_mouse_fg_7669_6.jpg'),
 
-    new PetHouse('L 66 x P 81 x H 88 cm', 'Pvc, wood', 'Cuccia per cani Modern Living Palma', '148.99 €', new Category('dog'), 'https://shop-cdn-m.mediazs.com/bilder/cuccia/per/cani/modern/living/palma/4/800/112108_pla_modern_living_hundeh_tte_palma_fg_1296_4.jpg')
+    new PetHouse('L 66 x P 81 x H 88 cm', 'Pvc, wood', 'Cuccia per cani Modern Living Palma', '148.99 €', new Category('dog'), 'https://shop-cdn-m.mediazs.com/bilder/cuccia/per/cani/modern/living/palma/4/800/112108_pla_modern_living_hundeh_tte_palma_fg_1296_4.jpg'),
+
+    new Food('Manzo', '2kg', 'manzo (31,3%, di cui 26% manzo fresco, 5,3% manzo essiccato), mais, pollo essiccato (16,5%), riso,
+    farina di riso integrale, proteine animali idrolizzate, grasso di pollo, olio di salmone (fonte naturale di Omega 3), minerali, mannano-oligosaccaridi (0,1%), inulina derivante dalla cicoria [fonte di FOS] (0,1%).', 'Secco', 'Almo Nature Holistic con Manzo Fresco', '11.99 €', new Category('cat'), 'https://shop-cdn-m.mediazs.com/bilder/almo/nature/holistic/con/manzo/fresco/6/800/68102_pla_almonature_rind_reis_2kg_6.jpg'),
+
+    new Toy('s', 'Nylabone Dura Chew Chicken Osso gioco', '7.90 €', new Category('dog'), 'https://shop-cdn-m.mediazs.com/bilder/nylabone/dura/chew/chicken/osso/gioco/2/800/58927_pla_interpet_nylabone_durachewchicken_hs_01_2.jpg')
 ];

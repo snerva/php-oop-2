@@ -58,7 +58,7 @@ require_once __DIR__ . '/Database/db.php';
     </header>
     <main>
         <div class="container p-3">
-            <div class="row row-cols-3">
+            <div class="row row-cols-4">
                 <?php foreach ($products as $product) : ?>
                     <div class="col p-3">
                         <div class="card">
