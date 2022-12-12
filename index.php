@@ -10,36 +10,51 @@ Il cliente potrà sia comprare i prodotti come ospite, senza doversi registrarsi
 Il cliente effettua il pagamento dei prodotti nel carrello con la carta di credito, che non deve essere scaduta.
 */
 
-class Product
-{
-    public $name;
-    public $code;
-    public $price;
-    public $category;
-    public $image;
+require_once __DIR__ . '/Models/Product.php';
+require_once __DIR__ . '/Models/Categories.php';
 
-    public function __construct($name, $code, $price, Category $category, $image)
-    {
-        $this->name = $name;
-        $this->code = $code;
-        $this->price = $price;
-        $this->category = $category;
-        $this->image =  $image;
-    }
-}
 
-class Category
-{
-}
 
 class Food extends Product
 {
+    public $taste;
+    public $weight;
+    public $ingredients;
+    public $type;
+
+    public function __construct($taste, $weight, $ingredients, $type, $name, $code, $price, Category $category, $image)
+    {
+        $this->taste = $taste;
+        $this->weight = $weight;
+        $this->ingredients = $ingredients;
+        $this->type = $type;
+
+        parent::__construct($name, $code, $price, $category, $image);
+    }
 }
 
 class Toy extends Product
 {
+    public $size;
+
+    public function __construct($size,  $name, $code, $price, Category $category, $image)
+    {
+        $this->size = $size;
+
+        parent::__construct($name, $code, $price, $category, $image);
+    }
 }
 
 class PetHouse extends Product
 {
+    public $size;
+    public $material;
+
+    public function __construct($size, $material, $name, $code, $price, Category $category, $image)
+    {
+        $this->size = $size;
+        $this->material = $material;
+
+        parent::__construct($name, $code, $price, $category, $image);
+    }
 }
