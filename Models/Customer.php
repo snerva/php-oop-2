@@ -13,10 +13,24 @@ class Customer
 
     public function insertCreditCard(CreditCard $card)
     {
+        $this->paymentMethod = $card;
+        return $this->paymentMethod;
     }
 
     public function makePayment($totalAmount)
     {
+        $card_year = $this->paymentMethod->cardyear;
+        $card_month = $this->paymentMethod->cardMonth;
+        $current_year = date('Y');
+        $current_month = date('m');
+
+        //var_dump($card_year, $card_month, $current_month, $current_year);
+
+        if ($card_year < $current_year || $card_month < $current_month && $card_year === $current_year) {
+            throw new Exception("Error processing your Credit Card. Card Expired!", 1);
+        } else {
+            echo "Payment successful! Total amount: $totalAmount €";
+        }
     }
 
     public function getDiscount()

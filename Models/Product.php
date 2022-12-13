@@ -7,7 +7,7 @@ class Product
     public $category;
     public $image;
 
-    public function __construct($name, $price, Category $category, $image)
+    public function __construct(String $name, Float $price, Category $category, String $image)
     {
         $this->name = $name;
         $this->price = $price;
