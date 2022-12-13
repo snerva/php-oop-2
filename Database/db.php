@@ -4,7 +4,9 @@ require_once __DIR__ . '/../Models/Categories.php';
 require_once __DIR__ . '/../Models/Food.php';
 require_once __DIR__ . '/../Models/Toys.php';
 require_once __DIR__ . '/../Models/PetHouse.php';
-
+require_once __DIR__ . '/../Models/Customer.php';
+require_once __DIR__ . '/../Models/CreditCard.php';
+require_once __DIR__ . '/../Models/Cart.php';
 
 // $crocchette = new Food('Manzo', '2kg', 'manzo (31,3%, di cui 26% manzo fresco, 5,3% manzo essiccato), mais, pollo essiccato (16,5%), riso,
 // farina di riso integrale, proteine animali idrolizzate, grasso di pollo, olio di salmone (fonte naturale di Omega 3), minerali, mannano-oligosaccaridi (0,1%), inulina derivante dalla cicoria [fonte di FOS] (0,1%).', 'Secco', 'Almo Nature Holistic con Manzo Fresco', '11.99 €', new Category('cat'), 'https://shop-cdn-m.mediazs.com/bilder/almo/nature/holistic/con/manzo/fresco/6/800/68102_pla_almonature_rind_reis_2kg_6.jpg');
@@ -37,3 +39,19 @@ $products = [
 
     new Toy('s', 'Nylabone Dura Chew Chicken Osso gioco', '7.90 €', new Category('dog'), 'https://shop-cdn-m.mediazs.com/bilder/nylabone/dura/chew/chicken/osso/gioco/2/800/58927_pla_interpet_nylabone_durachewchicken_hs_01_2.jpg')
 ];
+
+$guest = new Customer('Paolo', 'paolo@rossi.it', 'via Milano, 12',);
+//var_dump($guest);
+$guestCart = new Cart($guest);
+//var_dump($guestCart);
+$guestCart->addProduct(new Food('Manzo', '2kg', 'manzo (31,3%, di cui 26% manzo fresco, 5,3% manzo essiccato), mais, pollo essiccato (16,5%), riso,
+farina di riso integrale, proteine animali idrolizzate, grasso di pollo, olio di salmone (fonte naturale di Omega 3), minerali, mannano-oligosaccaridi (0,1%), inulina derivante dalla cicoria [fonte di FOS] (0,1%).', 'Secco', 'Almo Nature Holistic con Manzo Fresco', '11.99 €', new Category('cat'), 'https://shop-cdn-m.mediazs.com/bilder/almo/nature/holistic/con/manzo/fresco/6/800/68102_pla_almonature_rind_reis_2kg_6.jpg'), 2);
+$guestCart->addProduct(new Toy('s', 'Nylabone Dura Chew Chicken Osso gioco', '7.90 €', new Category('dog'), 'https://shop-cdn-m.mediazs.com/bilder/nylabone/dura/chew/chicken/osso/gioco/2/800/58927_pla_interpet_nylabone_durachewchicken_hs_01_2.jpg'), 4);
+
+$cartProducts = $guestCart->getProducts();
+//var_dump($cartProducts);
+$guestCartAmount = $guestCart->getTotal();
+//var_dump($GuestCartAmount)
+$guest->insertCreditCard(new CreditCard());
+
+$guest->makePayment($totalAmount);

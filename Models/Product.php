@@ -14,4 +14,14 @@ class Product
         $this->category = $category;
         $this->image =  $image;
     }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
 }
