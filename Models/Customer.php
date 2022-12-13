@@ -33,8 +33,18 @@ class Customer
         }
     }
 
+    public function setDiscount($discount)
+    {
+        $this->discount = $discount;
+    }
+
     public function getDiscount()
     {
         return $this->discount;
+    }
+
+    public function setStatus()
+    {
+        $this->registered = true;
     }
 }

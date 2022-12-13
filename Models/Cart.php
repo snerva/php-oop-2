@@ -32,7 +32,7 @@ class Cart
         }, $this->products);
         //var_dump($total);
         $totalAmount = array_sum($total);
-        $customer_discount = 20;
+        $customer_discount = $this->customer->getDiscount();
 
         return ($customer_discount > 0) ? $totalAmount * $customer_discount / 100 : $totalAmount;
     }
